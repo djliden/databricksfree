@@ -36,8 +36,8 @@ Enter the URL of this repository (`https://github.com/chefcaspers/databricksfree
 
 ### Run the demos
 
-Each notebook in the repository's root directory is a standalone demo. You can run them in any order, and each one is designed to be self-contained. The demos are:
+Each notebook is a standalone demo that you can run independently. However, for the complete Databricks experience—from raw data ingestion to intelligent AI agents—follow this recommended sequence:
 
-- [Agents](agents.ipynb): This demo shows how to register Unity Catalog functions and allow AI models to call them via the Databricks Mosaic AI Playground.
-- [Lakeflow](lakeflow.ipynb): This demo shows how to use Declarative Pipelines to create a Medallion architecture that reads events from JSON, normalizes the data, and publishes gold summary tables.
-- [AI/BI Genie](ai_bi_genie.ipynb): This demo shows how to use Databricks AI/BI Genie to explore your data with natural language, configure custom instructions, and generate SQL queries and visualizations.
+1. **[Lakeflow](lakeflow.ipynb)**: Start here to build your data foundation. Transform raw JSON events into a clean, queryable Medallion architecture using Declarative Pipelines.
+2. **[AI/BI Genie](ai_bi_genie.ipynb)**: With your data ready, explore it naturally. Ask questions in plain English and let Genie generate SQL queries and visualizations automatically.
+3. **[Agents](agents.ipynb)**: Build AI agents that can intelligently query your data and execute actions through Unity Catalog functions.
