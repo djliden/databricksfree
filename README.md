@@ -40,3 +40,4 @@ Each notebook in the repository's root directory is a standalone demo. You can r
 
 - [Agents](agents.ipynb): This demo shows how to register Unity Catalog functions and allow AI models to call them via the Databricks Mosaic AI Playground.
 - [Lakeflow](lakeflow.ipynb): This demo shows how to use Declarative Pipelines to create a Medallion architecture that reads events from JSON, normalizes the data, and publishes gold summary tables.
+- [AI/BI Genie](ai_bi_genie.ipynb): This demo shows how to use Databricks AI/BI Genie to explore your data with natural language, configure custom instructions, and generate SQL queries and visualizations.
