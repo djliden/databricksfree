@@ -1,43 +1,40 @@
-# Databricks Free Edition Demos
+# Build an End-to-End Data Platform with Databricks Free Edition
 
-This repository contains a selection of demos covering a range of Databricks use cases, all compatible with the Databricks Free Edition.
+**Experience the complete Databricks platform—from raw data ingestion to AI agents—using realistic business data.**
 
-## Chef Casper's Ghost Kitchen
+## What You'll Build
 
-All demos in this repository use Casper's Ghost Kitchen as a fictional business example.
+Transform from raw JSON events to intelligent AI agents in three (for now) hands-on demos:
+- **Data Engineering**: Medallion architecture with streaming pipelines using Delta Live Tables
+- **Analytics**: Natural language data exploration with AI/BI Genie  
+- **AI Agents**: Intelligent assistants that query data and execute business actions
 
-A ghost kitchen is a commercial cooking facility designed exclusively for delivery orders: no dining room, just kitchen space optimized for fulfilling online orders. Multiple restaurant brands often operate from a single ghost kitchen facility.
+All using Chef Casper's Ghost Kitchen—a realistic fictional business generating rich operational event data from order placement to delivery completion.
 
-This business model generates rich operational event data throughout the order lifecycle, from initial order placement, through kitchen preparation, driver assignment and pickup, real-time delivery tracking with GPS coordinates, to final delivery confirmation. Each order creates multiple timestamped events with detailed JSON payloads capturing everything from kitchen progress to driver location pings.
+## 🚀 Quick Start (2 Steps)
 
-Casper's Ghost Kitchen processes hundreds of orders daily across multiple virtual restaurant brands, creating realistic datasets perfect for demonstrating data engineering, analytics, and AI applications with Databricks.
+**Step 1:** [Sign up for Databricks Free Edition](https://login.databricks.com/?dbx_source=docs&intent=CE_SIGN_UP)
 
-## Prerequisites
-
-- Databricks Free Edition account
-- Basic familiarity with Python and SQL
-- No external data sources required: sample data is included!
-
-## Getting Started
-
-Getting started with these demos is simple. You just need to sign up for Databricks Free Edition, and then clone this repository.
-
-### Sign up for Databricks Free Edition
-
-You can sign up for Databricks Free Edition [here](https://login.databricks.com/?dbx_source=docs&intent=CE_SIGN_UP). To learn more about Free Edition, see the [Databricks Docs](https://docs.databricks.com/aws/en/getting-started/free-edition).
-
-### Clone this repository
-
-From the home page of your Databricks workspace, click the `+ New` button in the top right corner, then, under "more", select "Git folder".
+**Step 2** From the home page of your Databricks workspace, click the `+ New` button in the top right corner, then, under "more", select "Git folder".
 
 ![New Git Folder](images/new_git_folder.png)
 
 Enter the URL of this repository (`https://github.com/chefcaspers/databricksfree`) and then click "Create Git folder". This will clone the repository into a new folder in your workspace.
 
-### Run the demos
+**Step 3:** Step through the notebooks in this order for the best experience:
+1. **[lakeflow.ipynb](lakeflow.ipynb)** - Build your data foundation
+2. **[ai_bi_genie.ipynb](ai_bi_genie.ipynb)** - Explore data with natural language  
+3. **[agents.ipynb](agents.ipynb)** - Create intelligent AI agents
 
-Each notebook is a standalone demo that you can run independently. However, for the complete Databricks experience—from raw data ingestion to intelligent AI agents—follow this recommended sequence:
+_Note:_ Though we recommend working through the notebooks in the order above, later notebooks do not depend on earlier ones, so you can run them in whatever order you choose.
 
-1. **[Lakeflow](lakeflow.ipynb)**: Start here to build your data foundation. Transform raw JSON events into a clean, queryable Medallion architecture using Declarative Pipelines.
-2. **[AI/BI Genie](ai_bi_genie.ipynb)**: With your data ready, explore it naturally. Ask questions in plain English and let Genie generate SQL queries and visualizations automatically.
-3. **[Agents](agents.ipynb)**: Build AI agents that can intelligently query your data and execute actions through Unity Catalog functions.
+## About the Demo Data
+
+Chef Casper's Ghost Kitchen is a delivery-only facility processing orders from multiple virtual restaurant brands. This generates realistic operational event data throughout the complete order lifecycle—from placement through kitchen prep, driver assignment, real-time GPS tracking, to final delivery confirmation.
+
+Perfect for demonstrating real-world data engineering, analytics, and AI applications with Databricks.
+
+## Prerequisites
+
+- Basic familiarity with Python and SQL
+- All sample data included—no external sources needed!
