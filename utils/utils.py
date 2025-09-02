@@ -3,7 +3,7 @@ import shutil
 from pathlib import Path
 
 # Default configuration
-DEFAULT_CATALOG_NAME = "gk_demo"
+DEFAULT_CATALOG_NAME = "caspers"
 DEFAULT_SCHEMA_NAME = "default"
 DEFAULT_VOLUME_NAME = "raw_data"
 DEFAULT_ALL_EVENTS_TABLE_NAME = (
@@ -75,7 +75,7 @@ WITH order_times AS (
     MAX(CASE WHEN event_type = 'order_created' THEN try_to_timestamp(ts) END) AS order_created_time,
     MAX(CASE WHEN event_type = 'delivered' THEN try_to_timestamp(ts) END) AS delivered_time
   FROM
-    gk_demo.default.all_events
+    {DEFAULT_ALL_EVENTS_TABLE_NAME}
   GROUP BY
     order_id,
     location
@@ -166,14 +166,14 @@ def initialize_dimension_tables(
             REFERENCES {catalog}.{schema}.category(id)
     )""")
 
-def drop_gk_demo_catalog(spark, catalog_name=DEFAULT_CATALOG_NAME):
+def drop_catalog(spark, catalog_name=DEFAULT_CATALOG_NAME):
     spark.sql(f"DROP CATALOG IF EXISTS {catalog_name} CASCADE")
 
 
 # USAGE
 # From a notebook in the root directory, run:
-## from utils.utils import setup_catalog_and_volume, drop_gk_demo_catalog, copy_raw_data_to_volume, initialize_events_table
-## drop_gk_demo_catalog(spark)
+## from utils.utils import setup_catalog_and_volume, drop_catalog, copy_raw_data_to_volume, initialize_events_table
+## drop_catalog(spark)
 ## setup_catalog_and_volume(spark)
 ## copy_raw_data_to_volume()
 ## initialize_events_table(spark)

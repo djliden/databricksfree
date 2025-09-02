@@ -18,7 +18,7 @@ The codebase implements a complete medallion architecture using Delta Live Table
 ### Unity Catalog Structure
 Default catalog hierarchy:
 ```
-gk_demo/
+caspers/
   default/
     raw_data/          (volume for source data)
     all_events         (bronze table)
@@ -97,7 +97,7 @@ item_schema = StructType([
 ## Configuration Defaults
 
 Key constants defined in `utils/utils.py`:
-- Catalog: `gk_demo`  
+- Catalog: `caspers`  
 - Schema: `default`
 - Volume: `raw_data`
-- Primary events table: `gk_demo.default.all_events`
+- Primary events table: `caspers.default.all_events`

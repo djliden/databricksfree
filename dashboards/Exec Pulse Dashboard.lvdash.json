@@ -7,7 +7,7 @@
         "SELECT\n",
         "  SUM(brand_revenue)              AS value,\n",
         "  'Gross Revenue Today'           AS label\n",
-        "FROM gk_demo.lakeflow.dlt_brand_sales_day\n",
+        "FROM caspers.lakeflow.dlt_brand_sales_day\n",
         "--WHERE day = current_date();        -- session TZ assumed PST"
       ],
       "catalog": "analysis",
@@ -20,7 +20,7 @@
         "SELECT\n",
         "  COUNT(order_id)                 AS value,\n",
         "  'Orders Today (HLL ±2 %)'       AS label\n",
-        "FROM gk_demo.lakeflow.dlt_order_header\n",
+        "FROM caspers.lakeflow.dlt_order_header\n",
         "--WHERE order_day = current_date();"
       ],
       "catalog": "analysis",
@@ -32,7 +32,7 @@
       "queryLines": [
         "WITH orders AS (\n",
         "    SELECT order_id, total_qty, order_revenue\n",
-        "    FROM   gk_demo.lakeflow.dlt_order_header\n",
+        "    FROM   caspers.lakeflow.dlt_order_header\n",
         "    --WHERE  order_day = current_date()\n",
         ")\n",
         "SELECT\n",
@@ -51,7 +51,7 @@
         "  SUM(brand_revenue)               AS revenue,\n",
         "  :goal_dollars                AS goal,\n",
         "  SUM(brand_revenue)/:goal_dollars AS pct\n",
-        "FROM gk_demo.lakeflow.dlt_brand_sales_day\n",
+        "FROM caspers.lakeflow.dlt_brand_sales_day\n",
         "--WHERE day = current_date();"
       ],
       "parameters": [
@@ -82,7 +82,7 @@
         "    hour_ts,\n",
         "    location,\n",
         "    SUM(revenue) AS revenue\n",
-        "FROM gk_demo.lakeflow.dlt_location_sales_hourly\n",
+        "FROM caspers.lakeflow.dlt_location_sales_hourly\n",
         "-- WHERE hour_ts >= date_trunc('day', current_timestamp() - INTERVAL 1 DAY)   -- today only\n",
         "GROUP BY hour_ts, location\n",
         "ORDER BY hour_ts, location;\n"

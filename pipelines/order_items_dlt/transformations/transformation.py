@@ -7,6 +7,10 @@ from pyspark.sql.types import (
     StructType, StructField, StringType, IntegerType,
     DoubleType, ArrayType
 )
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join("..", "..", "..")))
+from utils.utils import DEFAULT_VOLUME_PATH
 
 # ──────────────────────────────────────────────────────────────
 # 0. Bronze  – raw event stream
@@ -18,7 +22,7 @@ def all_events():
     return (
         spark.readStream.format("cloudFiles") 
              .option("cloudFiles.format", "json")
-             .load("/Volumes/gk_demo/default/raw_data")
+             .load(DEFAULT_VOLUME_PATH)
     )
 
 # ──────────────────────────────────────────────────────────────
